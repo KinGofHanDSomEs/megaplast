@@ -1,43 +1,62 @@
-@extends('layouts.app')
+@extends('layouts.app.information')
 
 @section('title', 'Партнеры')
 
 @section('main')
     <main class="flex-1 flex flex-col bg-white">
-        <section class="banner mb-5 border-b border-[#eee]">
-            <div class="container relative min-h-100 lg:min-h-150 mx-auto w-full px-4">
-                <div class="info flex flex-col justify-center pb-10 pl-10 absolute w-full h-full z-10 bg-linear-[90deg,#ffffff,#ffffff,#ffffff,#ffffff,#ffffffef,#ffffffaf,#ffffff00] lg:bg-linear-[90deg,#ffffff,#ffffff,#ffffff,#ffffffbf,#ffffff00]">
-                    <h2 class="text-xl lg:text-2xl font-bold text-[#0a49bf] w-1/2 mt-20 mb-1 lg:mb-5">Наши партнеры - наша сила</h2>
-                    <p class="text-xs lg:text-sm text-gray-500 w-1/2 mb-1 lg:mb-5">Сотрудничаем с ведущими компаниями в сфере строительства, архитектуры и производства. Вместе мы реализуем проекты любой сложности</p>
+        <section class="banner bg-[#f2f6fb] mb-5">
+            <div class="container mx-auto w-full bg-[#f2f6fb] relative h-150 overflow-hidden">
+                <div class="info absolute left-0 top-0 w-full h-full z-10 flex">
+                    <div
+                        class="text relative h-full w-1/2 bg-[#f2f6fb] flex flex-col justify-end pl-5 pb-10 md:pb-20 pr-3 after:absolute after:left-full after:top-0 after:h-full after:w-2/3 after:bg-linear-[90deg,#f2f6fb,#f2f6fb00]">
+                        <h2 class="text-xl text-[#0a49bf] font-bold mb-2">Партнеры</h2>
+                        <p class="text-sm mb-4">Производим конструкции из различных профильных систем от эконом до
+                            премиум класса в различных исполнениях</p>
 
-                    <div class="cards flex text-sm w-2/3 lg:w-1/2">
-                        <div class="card flex items-center w-1/3 mr-2 lg:mr-0">
-                            <svg class="w-7 h-7 lg:w-10 lg:h-10 mr-2 text-[#0a49bf]">
-                                <use href="{{ asset('resources/images/icons/handshake.svg') }}" />
-                            </svg>
-
-                            <p class="text-xs lg:text-sm">Надежное сотрудничество</p>
+                        <div class="buttons flex flex-col md:flex-row mb-5 xl:mb-10 w-6/7 lg:w-2/3 xl:w-1/2">
+                            <a href="{{ route('information.production') }}"
+                               class="mb-3 md:mb-0 text-center text-sm font-bold w-4/5 md:w-1/2 py-3 flex justify-center items-center text-white bg-[#0a49bf] rounded-lg mr-3 transition hover:bg-blue-600 active:text-black">Продукция</a>
+                            <a href="{{ route('system.manage.profileView') }}"
+                               class="text-center text-sm font-bold w-4/5 md:w-1/2 py-3 flex justify-center items-center text-[#0a49bf] bg-white border border-[#0a49bf] rounded-lg transition hover:border-blue-600 hover:text-blue-600 active:text-black active:border-black">Оставить
+                                заявку</a>
                         </div>
 
-                        <div class="card flex items-center w-1/3 mr-2 lg:mr-0">
-                            <svg class="w-6 h-6 lg:w-9 lg:h-9 mr-2 text-[#0a49bf]">
-                                <use href="{{ asset('resources/images/icons/medal.svg') }}" />
-                            </svg>
+                        <div class="icons grid md:grid-cols-2 xl:grid-cols-3 xl:w-6/7 gap-3">
+                            <div class="row flex items-center xl:border-r xl:border-[#eee] pr-2">
+                                <div class="icon bg-white rounded-lg mr-3">
+                                    <svg class="w-7 h-7 m-1 text-[#0a49bf]">
+                                        <use href="{{ asset('resources/images/icons/layers.svg') }}"/>
+                                    </svg>
+                                </div>
 
-                            <p class="text-xs lg:text-sm">Проверенные партнеры</p>
-                        </div>
+                                <p class="text-sm">Собственное производство</p>
+                            </div>
 
-                        <div class="card flex items-center w-1/3">
-                            <svg class="w-9 h-9 lg:w-12 lg:h-12 mr-2 text-[#0a49bf]">
-                                <use href="{{ asset('resources/images/icons/target.svg') }}" />
-                            </svg>
+                            <div class="row flex items-center xl:border-r xl:border-[#eee] pr-2">
+                                <div class="icon bg-white rounded-lg mr-3">
+                                    <svg class="w-7 h-7 m-1 text-[#0a49bf]">
+                                        <use href="{{ asset('resources/images/icons/security.svg') }}"/>
+                                    </svg>
+                                </div>
 
-                            <p class="text-xs lg:text-sm">Общие цели - общий результат</p>
+                                <p class="text-sm">Контроль качества</p>
+                            </div>
+
+                            <div class="row flex items-center">
+                                <div class="icon bg-white rounded-lg mr-3">
+                                    <svg class="w-7 h-7 m-1 text-[#0a49bf]">
+                                        <use href="{{ asset('resources/images/icons/calendar.svg') }}"/>
+                                    </svg>
+                                </div>
+
+                                <p class="text-sm">Изготовление в срок от 1 дня</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <img src="{{ asset('resources/images/banner/glazed-building.png') }}" alt="windows in row" loading="lazy" class="absolute h-full right-0 object-cover object-right">
+                <img src="{{ asset('resources/images/banners/ural2.jpg')  }}" alt="banner" loading="lazy"
+                     class="absolute h-full right-0 bottom-0">
             </div>
         </section>
 
@@ -47,8 +66,9 @@
 
                 <div class="partners grid grid-cols-2 sm:grid-cols-3 gap-5">
                     @foreach($partners as $partner)
-                        <a href="{{ $partner->link_website }}" target="_blank">
-                            <img src="{{ asset($partner->url) }}" alt="partner {{ $partner->id }}" loading="lazy" class="partner h-full object-cover object-center">
+                        <a href="{{ $partner->link }}" target="_blank">
+                            <img src="{{ asset($partner->image_url) }}" alt="partner {{ $partner->id }}" loading="lazy"
+                                 class="partner h-full object-cover object-center">
                         </a>
                     @endforeach
                 </div>
@@ -57,22 +77,27 @@
 
         <section class="become-partner-container mb-10">
             <div class="container relative mx-auto w-full text-white h-60">
-                <div class="info absolute flex justify-between w-full h-full rounded-xl bg-linear-[90deg,#00030d,#00030d,#00030d00,#00030d,#00030d] z-10">
+                <div
+                    class="info absolute flex justify-between w-full h-full rounded-xl bg-linear-[90deg,#00030d,#00030d,#00030d00,#00030d,#00030d] z-10">
                     <div class="text flex flex-col justify-between ml-9 my-8 w-4/5">
                         <div class="text-group flex flex-col">
                             <h3 class="font-bold text-base lg:text-lg mb-4">Станьте нашим партнером</h3>
-                            <p class="text-xs lg:text-sm">Мы открыты к новым проектам и взаимовыгодному сотрудничеству.</p>
+                            <p class="text-xs lg:text-sm">Мы открыты к новым проектам и взаимовыгодному
+                                сотрудничеству.</p>
                             <p class="text-xs lg:text-sm mb-7">Заполните форму, и наш менеджер свяжется с вами</p>
                         </div>
 
-                        <a href="#" class="text-xs lg:text-sm font-bold bg-[#0a49bf] self-start px-3 lg:px-5 py-2 lg:py-4 rounded-lg flex items-center transition hover:bg-blue-600">Стать партнером <span class="ml-5">→</span></a>
+                        <a href="#"
+                           class="text-xs lg:text-sm font-bold bg-[#0a49bf] self-start px-3 lg:px-5 py-2 lg:py-4 rounded-lg flex items-center transition hover:bg-blue-600">Стать
+                            партнером <span class="ml-5">→</span></a>
                     </div>
 
                     <div class="icons flex flex-col justify-center mr-9 my-8 w-1/5">
                         <div class="icon flex items-center mb-5">
-                            <div class="icon-container w-12 h-10 border border-white rounded-lg mr-2 flex justify-center items-center">
+                            <div
+                                class="icon-container w-12 h-10 border border-white rounded-lg mr-2 flex justify-center items-center">
                                 <svg class="w-8 h-6 text-white">
-                                    <use href="{{ asset('resources/images/icons/human.svg') }}" />
+                                    <use href="{{ asset('resources/images/icons/human.svg') }}"/>
                                 </svg>
                             </div>
 
@@ -80,9 +105,10 @@
                         </div>
 
                         <div class="icon flex items-center mb-5">
-                            <div class="icon-container w-15 lg:w-12 xl:w-10 h-10 border border-white rounded-lg mr-2 flex justify-center items-center">
+                            <div
+                                class="icon-container w-15 lg:w-12 xl:w-10 h-10 border border-white rounded-lg mr-2 flex justify-center items-center">
                                 <svg class="w-6 h-6 text-white">
-                                    <use href="{{ asset('resources/images/icons/like.svg') }}" />
+                                    <use href="{{ asset('resources/images/icons/like.svg') }}"/>
                                 </svg>
                             </div>
 
@@ -90,9 +116,10 @@
                         </div>
 
                         <div class="icon flex items-center">
-                            <div class="icon-container w-15 lg:w-12 xl:w-10 h-10 border border-white rounded-lg mr-2 flex justify-center items-center">
+                            <div
+                                class="icon-container w-15 lg:w-12 xl:w-10 h-10 border border-white rounded-lg mr-2 flex justify-center items-center">
                                 <svg class="w-6 h-6 text-white">
-                                    <use href="{{ asset('resources/images/icons/support.svg') }}" />
+                                    <use href="{{ asset('resources/images/icons/support.svg') }}"/>
                                 </svg>
                             </div>
 

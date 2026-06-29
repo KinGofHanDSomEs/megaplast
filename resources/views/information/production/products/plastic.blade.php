@@ -1,22 +1,62 @@
-@extends('layouts.app')
+@extends('layouts.app.information')
 
 @section('title', 'Пластиковые окна и двери')
 
 @section('main')
     <main class="flex-1 flex flex-col bg-white">
-        <section class="banner">
-            <div class="container relative min-h-100 lg:min-h-150 mx-auto w-full px-4">
-                <div class="info flex flex-col justify-center pb-10 pl-10 absolute w-full h-full z-10 bg-linear-[90deg,#ffffff,#ffffff,#ffffff,#ffffff,#ffffffef,#ffffffaf,#ffffff00] lg:bg-linear-[90deg,#ffffff,#ffffff,#ffffff,#ffffffbf,#ffffff00]">
-                    <h2 class="text-xl lg:text-2xl font-bold text-[#0a49bf] w-1/2 mt-20 mb-1 lg:mb-5">Пластиковые окна и двери</h2>
-                    <p class="text-xs lg:text-sm text-gray-500 w-1/3 mb-2 lg:mb-5">Современные оконные и дверные системы из ПВХ профиля. Тепло, тишина и комфорт в вашем доме или офисе.</p>
+        <section class="banner bg-[#f2f6fb]">
+            <div class="container mx-auto w-full bg-[#f2f6fb] relative h-150 overflow-hidden">
+                <div class="info absolute left-0 top-0 w-full h-full z-10 flex">
+                    <div
+                        class="text relative h-full w-1/2 bg-[#f2f6fb] flex flex-col justify-end pl-5 pb-10 md:pb-20 pr-3 after:absolute after:left-full after:top-0 after:h-full after:w-2/3 after:bg-linear-[90deg,#f2f6fb,#f2f6fb00]">
+                        <h2 class="text-xl text-[#0a49bf] font-bold mb-2">Пластиковые окна и двери</h2>
+                        <p class="text-sm mb-4">Производим конструкции из различных профильных систем от эконом до
+                            премиум класса в различных исполнениях</p>
 
-                    <div class="buttons flex mb-4 lg:mb-7">
-                        <a href="#" class="text-xs lg:text-sm py-1 px-3 lg:px-6 lg:py-3 text-white font-bold bg-[#0a49bf] rounded-lg mr-3 transition hover:bg-[#1447e6]">Рассчитать стоимость</a>
-                        <a href="#" class="text-xs lg:text-sm py-1 px-3 lg:px-6 lg:py-3 text-[#0a49bf] font-bold bg-white border border-[#0a49bf] rounded-lg transition hover:border-blue-600 hover:text-blue-600">Каталог решений</a>
+                        <div class="buttons flex flex-col md:flex-row mb-5 xl:mb-10 w-6/7 lg:w-2/3 xl:w-1/2">
+                            <a href="{{ route('information.production') }}"
+                               class="mb-3 md:mb-0 text-center text-sm font-bold w-4/5 md:w-1/2 py-3 flex justify-center items-center text-white bg-[#0a49bf] rounded-lg mr-3 transition hover:bg-blue-600 active:text-black">Продукция</a>
+                            <a href="{{ route('system.manage.profileView') }}"
+                               class="text-center text-sm font-bold w-4/5 md:w-1/2 py-3 flex justify-center items-center text-[#0a49bf] bg-white border border-[#0a49bf] rounded-lg transition hover:border-blue-600 hover:text-blue-600 active:text-black active:border-black">Оставить
+                                заявку</a>
+                        </div>
+
+                        <div class="icons grid md:grid-cols-2 xl:grid-cols-3 xl:w-6/7 gap-3">
+                            <div class="row flex items-center xl:border-r xl:border-[#eee] pr-2">
+                                <div class="icon bg-white rounded-lg mr-3">
+                                    <svg class="w-7 h-7 m-1 text-[#0a49bf]">
+                                        <use href="{{ asset('resources/images/icons/layers.svg') }}"/>
+                                    </svg>
+                                </div>
+
+                                <p class="text-sm">Собственное производство</p>
+                            </div>
+
+                            <div class="row flex items-center xl:border-r xl:border-[#eee] pr-2">
+                                <div class="icon bg-white rounded-lg mr-3">
+                                    <svg class="w-7 h-7 m-1 text-[#0a49bf]">
+                                        <use href="{{ asset('resources/images/icons/security.svg') }}"/>
+                                    </svg>
+                                </div>
+
+                                <p class="text-sm">Контроль качества</p>
+                            </div>
+
+                            <div class="row flex items-center">
+                                <div class="icon bg-white rounded-lg mr-3">
+                                    <svg class="w-7 h-7 m-1 text-[#0a49bf]">
+                                        <use href="{{ asset('resources/images/icons/calendar.svg') }}"/>
+                                    </svg>
+                                </div>
+
+                                <p class="text-sm">Изготовление в срок от 1 дня</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <img src="{{ asset('resources/images/banner/megaplast.webp') }}" alt="megaplast" loading="lazy" class="absolute h-full right-0 object-cover object-right">
+                <img src="{{ asset('resources/images/banners/conveyor-windows.png')  }}" alt="banner" loading="lazy"
+                     class="absolute h-full right-0 bottom-0">
             </div>
         </section>
 
@@ -25,7 +65,7 @@
                 <div class="guarantees grid grid-cols-4">
                     <div class="guarantee flex mr-1 sm:mr-3 lg:mr-5">
                         <svg class="w-8 h-8 lg:w-10 lg:h-10 mr-1 lg:mr-3 text-[#0a49bf]">
-                            <use href="{{ asset('resources/images/icons/security.svg') }}" />
+                            <use href="{{ asset('resources/images/icons/security.svg') }}"/>
                         </svg>
 
                         <div class="col flex flex-col">
@@ -36,7 +76,7 @@
 
                     <div class="guarantee flex mr-1 sm:mr-3 lg:mr-5">
                         <svg class="w-10 h-10 lg:w-12 lg:h-12 mr-1 lg:mr-3 text-[#0a49bf]">
-                            <use href="{{ asset('resources/images/icons/reliability.svg') }}" />
+                            <use href="{{ asset('resources/images/icons/reliability.svg') }}"/>
                         </svg>
 
                         <div class="col flex flex-col mr-1 sm:mr-3 lg:mr-7">
@@ -47,7 +87,7 @@
 
                     <div class="guarantee flex mr-1 sm:mr-3 lg:mr-5">
                         <svg class="w-8 h-8 lg:w-10 lg:h-10 mr-1 lg:mr-3 text-[#0a49bf]">
-                            <use href="{{ asset('resources/images/icons/leaf.svg') }}" />
+                            <use href="{{ asset('resources/images/icons/leaf.svg') }}"/>
                         </svg>
 
                         <div class="col flex flex-col">
@@ -58,7 +98,7 @@
 
                     <div class="guarantee flex">
                         <svg class="w-8 h-8 lg:w-10 lg:h-10 mr-1 lg:mr-3 text-[#0a49bf]">
-                            <use href="{{ asset('resources/images/icons/palette.svg') }}" />
+                            <use href="{{ asset('resources/images/icons/palette.svg') }}"/>
                         </svg>
 
                         <div class="col flex flex-col">
@@ -76,58 +116,74 @@
 
                 <div class="types grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
                     <div class="type h-100 border rounded-xl border-[#eee]">
-                        <img src="{{ asset('resources/images/projects/ural/ural.jpg/') }}" alt="ural" loading="lazy" class="rounded-t-xl h-2/3 w-full object-cover object-center">
+                        <img src="{{ asset('resources/images/production/products/plastic/1.jpg') }}" alt="plastic 1" loading="lazy"
+                             class="rounded-t-xl h-2/3 w-full object-cover object-center">
 
                         <div class="info h-1/3 px-4 py-3 flex flex-col justify-between">
                             <div class="text">
                                 <h3 class="text-xs 2xl:text-sm font-bold mb-1">Поворотные окна</h3>
 
-                                <p class="text-xs 2xl:text-sm mb-1">Классический вариант открывания. Надежные и удобные в использовании.</p>
+                                <p class="text-xs 2xl:text-sm mb-1">Классический вариант открывания. Надежные и удобные
+                                    в использовании.</p>
                             </div>
 
-                            <a href="#" class="self-start text-xs 2xl:text-sm font-bold text-[#0a49bf] transition hover:text-blue-600">Подробнее →</a>
+                            <a href="#"
+                               class="self-start text-xs 2xl:text-sm font-bold text-[#0a49bf] transition hover:text-blue-600">Подробнее
+                                →</a>
                         </div>
                     </div>
 
                     <div class="type h-100 border rounded-xl border-[#eee]">
-                        <img src="{{ asset('resources/images/projects/ural/ural.jpg/') }}" alt="ural" loading="lazy" class="rounded-t-xl h-2/3 w-full object-cover object-center">
+                        <img src="{{ asset('resources/images/production/products/plastic/2.jpg') }}" alt="plastic 2" loading="lazy"
+                             class="rounded-t-xl h-2/3 w-full object-cover object-center">
 
                         <div class="info h-1/3 px-4 py-3 flex flex-col justify-between">
                             <div class="text">
                                 <h3 class="text-xs 2xl:text-sm font-bold mb-1">Поворотно-откидные окна</h3>
 
-                                <p class="text-xs 2xl:text-sm mb-1">Функциональность и конфорт. Проветривание без сквозняков.</p>
+                                <p class="text-xs 2xl:text-sm mb-1">Функциональность и конфорт. Проветривание без
+                                    сквозняков.</p>
                             </div>
 
-                            <a href="#" class="self-start text-xs 2xl:text-sm font-bold text-[#0a49bf] transition hover:text-blue-600">Подробнее →</a>
+                            <a href="#"
+                               class="self-start text-xs 2xl:text-sm font-bold text-[#0a49bf] transition hover:text-blue-600">Подробнее
+                                →</a>
                         </div>
                     </div>
 
                     <div class="type h-100 border rounded-xl border-[#eee]">
-                        <img src="{{ asset('resources/images/projects/ural/ural.jpg/') }}" alt="ural" loading="lazy" class="rounded-t-xl h-2/3 w-full object-cover object-center">
+                        <img src="{{ asset('resources/images/production/products/plastic/3.jpg') }}" alt="plastic 3" loading="lazy"
+                             class="rounded-t-xl h-2/3 w-full object-cover object-center">
 
                         <div class="info h-1/3 px-4 py-3 flex flex-col justify-between">
                             <div class="text">
                                 <h3 class="text-xs 2xl:text-sm font-bold mb-1">Раздвижные окна и двери</h3>
 
-                                <p class="text-xs 2xl:text-sm mb-1">Идеальны для балконов и лоджий Экономия пространства и легкость использования.</p>
+                                <p class="text-xs 2xl:text-sm mb-1">Идеальны для балконов и лоджий Экономия пространства
+                                    и легкость использования.</p>
                             </div>
 
-                            <a href="#" class="self-start text-xs 2xl:text-sm font-bold text-[#0a49bf] transition hover:text-blue-600">Подробнее →</a>
+                            <a href="#"
+                               class="self-start text-xs 2xl:text-sm font-bold text-[#0a49bf] transition hover:text-blue-600">Подробнее
+                                →</a>
                         </div>
                     </div>
 
                     <div class="type h-100 border rounded-xl border-[#eee]">
-                        <img src="{{ asset('resources/images/projects/ural/ural.jpg/') }}" alt="ural" loading="lazy" class="rounded-t-xl h-2/3 w-full object-cover object-center">
+                        <img src="{{ asset('resources/images/production/products/plastic/4.jpg') }}" alt="plastic 4" loading="lazy"
+                             class="rounded-t-xl h-2/3 w-full object-cover object-center">
 
                         <div class="info h-1/3 px-4 py-3 flex flex-col justify-between">
                             <div class="text">
                                 <h3 class="text-xs 2xl:text-sm font-bold mb-1">Входные ПВХ двери</h3>
 
-                                <p class="text-xs 2xl:text-sm mb-1">Прочные и теплые двери для частных домов и офисов.</p>
+                                <p class="text-xs 2xl:text-sm mb-1">Прочные и теплые двери для частных домов и
+                                    офисов.</p>
                             </div>
 
-                            <a href="#" class="self-start text-xs 2xl:text-sm font-bold text-[#0a49bf] transition hover:text-blue-600">Подробнее →</a>
+                            <a href="#"
+                               class="self-start text-xs 2xl:text-sm font-bold text-[#0a49bf] transition hover:text-blue-600">Подробнее
+                                →</a>
                         </div>
                     </div>
                 </div>
@@ -141,7 +197,7 @@
                 <div class="features grid grid-cols-5 gap-3">
                     <div class="feature flex">
                         <svg class="w-8 h-8 lg:w-10 lg:h-10 mr-2 text-[#0a49bf]">
-                            <use href="{{ asset('resources/images/icons/temperature.svg') }}" />
+                            <use href="{{ asset('resources/images/icons/temperature.svg') }}"/>
                         </svg>
 
                         <div class="text flex flex-col">
@@ -152,7 +208,7 @@
 
                     <div class="feature flex">
                         <svg class="w-8 h-8 lg:w-10 lg:h-10 mr-2 text-[#0a49bf]">
-                            <use href="{{ asset('resources/images/icons/sound.svg') }}" />
+                            <use href="{{ asset('resources/images/icons/sound.svg') }}"/>
                         </svg>
 
                         <div class="text flex flex-col">
@@ -163,7 +219,7 @@
 
                     <div class="feature flex">
                         <svg class="w-8 h-8 lg:w-10 lg:h-10 mr-2 text-[#0a49bf]">
-                            <use href="{{ asset('resources/images/icons/security.svg') }}" />
+                            <use href="{{ asset('resources/images/icons/security.svg') }}"/>
                         </svg>
 
                         <div class="text flex flex-col">
@@ -174,7 +230,7 @@
 
                     <div class="feature flex">
                         <svg class="w-8 h-8 lg:w-10 lg:h-10 mr-2 text-[#0a49bf]">
-                            <use href="{{ asset('resources/images/icons/brush.svg') }}" />
+                            <use href="{{ asset('resources/images/icons/brush.svg') }}"/>
                         </svg>
 
                         <div class="text flex flex-col">
@@ -185,7 +241,7 @@
 
                     <div class="feature flex">
                         <svg class="w-8 h-8 lg:w-10 lg:h-10 mr-2 text-[#0a49bf]">
-                            <use href="{{ asset('resources/images/icons/medal.svg') }}" />
+                            <use href="{{ asset('resources/images/icons/medal.svg') }}"/>
                         </svg>
 
                         <div class="text flex flex-col">
@@ -202,16 +258,20 @@
                 <div class="help flex justify-between bg-[#f5f7fc] rounded-xl py-7 px-6">
                     <div class="info flex items-center w-4/6 lg:w-4/5">
                         <svg class="w-10 h-10 sm:w-15 sm:h-15 mr-3 sm:mr-5 text-[#0a49bf]">
-                            <use href="{{ asset('resources/images/icons/assistant.svg') }}" />
+                            <use href="{{ asset('resources/images/icons/assistant.svg') }}"/>
                         </svg>
 
                         <div class="col flex flex-col">
-                            <h3 class="text-xs sm:text-sm lg:text-base font-bold mb-2">Нужна помощь в подборе продукции?</h3>
-                            <p class="text-xs lg:text-sm w-5/6">Наши специалисты помогут подобрать оптимальное решение под ваш проект и рассчитают стоимость</p>
+                            <h3 class="text-xs sm:text-sm lg:text-base font-bold mb-2">Нужна помощь в подборе
+                                продукции?</h3>
+                            <p class="text-xs lg:text-sm w-5/6">Наши специалисты помогут подобрать оптимальное решение
+                                под ваш проект и рассчитают стоимость</p>
                         </div>
                     </div>
 
-                    <a href="#" class="wg-2/6 lg:w-1/5 text-xs xl:text-sm self-center text-center text-white bg-[#0a49bf] transition hover:bg-blue-600 px-3 lg:px-0 py-2 xl:py-4 rounded-lg">Получить консультацию</a>
+                    <a href="#"
+                       class="wg-2/6 lg:w-1/5 text-xs xl:text-sm self-center text-center text-white bg-[#0a49bf] transition hover:bg-blue-600 px-3 lg:px-0 py-2 xl:py-4 rounded-lg">Получить
+                        консультацию</a>
                 </div>
             </div>
         </section>

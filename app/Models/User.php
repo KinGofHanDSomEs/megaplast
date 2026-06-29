@@ -7,10 +7,11 @@ use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Hidden;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-#[Fillable(['login', 'password', 'fio', 'phone', 'email'])]
+#[Fillable(['email', 'password', 'email_verified_at', 'role', 'name', 'lastname', 'patronymic', 'phone', 'last_login_at'])]
 #[Hidden(['password', 'remember_token'])]
 
 /**
@@ -29,7 +30,13 @@ class User extends Authenticatable
     protected function casts(): array
     {
         return [
+            'last_login_at' => 'datetime',
+            'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function orders(): HasMany {
+        return $this->hasMany(Order::class);
     }
 }

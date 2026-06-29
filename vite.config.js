@@ -15,6 +15,11 @@ export default defineConfig({
                 'resources/js/about/projects.js',
                 'resources/js/header.js',
                 'resources/js/functions.js',
+                'resources/js/auth.js',
+                'resources/js/manage/profile.js',
+                'resources/js/manage/navigation.js',
+                'resources/js/manage/header.js',
+                'resources/js/manage/orders.js'
             ],
             refresh: true,
             fonts: [
