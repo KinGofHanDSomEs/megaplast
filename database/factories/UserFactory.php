@@ -5,7 +5,10 @@ namespace Database\Factories;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
+<<<<<<< HEAD
 use Illuminate\Support\Str;
+=======
+>>>>>>> 65a6a6386df3e72542fe014458e036af01f8b9f6
 
 /**
  * @extends Factory<User>
@@ -25,6 +28,7 @@ class UserFactory extends Factory
     public function definition(): array
     {
         return [
+<<<<<<< HEAD
             'name' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
@@ -42,4 +46,13 @@ class UserFactory extends Factory
             'email_verified_at' => null,
         ]);
     }
+=======
+            'email' => fake()->unique()->safeEmail(),
+            'password' => static::$password ??= Hash::make('password'),
+            'name' => fake()->firstName(),
+            'lastname' => fake()->lastName(),
+            'phone' => fake()->unique()->phoneNumber(),
+        ];
+    }
+>>>>>>> 65a6a6386df3e72542fe014458e036af01f8b9f6
 }

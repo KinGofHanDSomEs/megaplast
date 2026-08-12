@@ -8,12 +8,21 @@
     },
     "devDependencies": {
         "@tailwindcss/vite": "^4.0.0",
+<<<<<<< HEAD
         "concurrently": "^10.0.3",
+=======
+        "concurrently": "^9.0.1",
+>>>>>>> 65a6a6386df3e72542fe014458e036af01f8b9f6
         "laravel-vite-plugin": "^3.1",
         "tailwindcss": "^4.0.0",
         "vite": "^8.0.0"
     },
+<<<<<<< HEAD
     "optionalDependencies": {
         "@laravel/multiplex": "^0.4.1"
+=======
+    "dependencies": {
+        "vite-plugin-static-copy": "^4.1.0"
+>>>>>>> 65a6a6386df3e72542fe014458e036af01f8b9f6
     }
 }

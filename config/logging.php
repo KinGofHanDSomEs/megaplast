@@ -69,6 +69,7 @@ return [
             'driver' => 'daily',
             'path' => storage_path('logs/laravel.log'),
             'level' => env('LOG_LEVEL', 'debug'),
+<<<<<<< HEAD
             'max_files' => env('LOG_DAILY_DAYS', 14),
             'replace_placeholders' => true,
         ],
@@ -78,6 +79,9 @@ return [
             'path' => storage_path('logs/laravel.log'),
             'level' => env('LOG_LEVEL', 'debug'),
             'max_files' => 3,
+=======
+            'days' => env('LOG_DAILY_DAYS', 14),
+>>>>>>> 65a6a6386df3e72542fe014458e036af01f8b9f6
             'replace_placeholders' => true,
         ],
 

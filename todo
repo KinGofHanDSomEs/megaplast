@@ -1,0 +1,15 @@
+В процессе Views:
+- information.about.projects - Наши проекты
+
+
+
+Сделаны Views:
+- information.index - Главня
+- information.production - Производство
+- about - Осталось (about, contacts)
+
+Для оптимизации Views:
+- information.about.projects - Перенести проекты в бд
+
+stroke="currentColor"
+fill="currentColor"

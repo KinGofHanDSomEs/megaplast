@@ -3,7 +3,10 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
+<<<<<<< HEAD
 use Illuminate\Http\Request;
+=======
+>>>>>>> 65a6a6386df3e72542fe014458e036af01f8b9f6
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -15,7 +18,11 @@ return Application::configure(basePath: dirname(__DIR__))
         //
     })
     ->withExceptions(function (Exceptions $exceptions): void {
+<<<<<<< HEAD
         $exceptions->shouldRenderJsonWhen(
             fn (Request $request) => $request->is('api/*') || $request->expectsJson(),
         );
+=======
+        //
+>>>>>>> 65a6a6386df3e72542fe014458e036af01f8b9f6
     })->create();

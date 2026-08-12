@@ -30,7 +30,11 @@ return [
     | which utilizes session storage plus the Eloquent user provider.
     |
     | All authentication guards have a user provider, which defines how the
+<<<<<<< HEAD
     | users are actually retrieved out of your database or other storage
+=======
+    | profiles-pictures are actually retrieved out of your database or other storage
+>>>>>>> 65a6a6386df3e72542fe014458e036af01f8b9f6
     | system used by the application. Typically, Eloquent is utilized.
     |
     | Supported: "session"
@@ -50,7 +54,11 @@ return [
     |--------------------------------------------------------------------------
     |
     | All authentication guards have a user provider, which defines how the
+<<<<<<< HEAD
     | users are actually retrieved out of your database or other storage
+=======
+    | profiles-pictures are actually retrieved out of your database or other storage
+>>>>>>> 65a6a6386df3e72542fe014458e036af01f8b9f6
     | system used by the application. Typically, Eloquent is utilized.
     |
     | If you have multiple user tables or models you may configure multiple
@@ -80,7 +88,11 @@ return [
     |
     | These configuration options specify the behavior of Laravel's password
     | reset functionality, including the table utilized for token storage
+<<<<<<< HEAD
     | and the user provider that is invoked to actually retrieve users.
+=======
+    | and the user provider that is invoked to actually retrieve profiles-pictures.
+>>>>>>> 65a6a6386df3e72542fe014458e036af01f8b9f6
     |
     | The expiry time is the number of minutes that each reset token will be
     | considered valid. This security feature keeps tokens short-lived so
@@ -107,7 +119,11 @@ return [
     |--------------------------------------------------------------------------
     |
     | Here you may define the number of seconds before a password confirmation
+<<<<<<< HEAD
     | window expires and users are asked to re-enter their password via the
+=======
+    | window expires and profiles-pictures are asked to re-enter their password via the
+>>>>>>> 65a6a6386df3e72542fe014458e036af01f8b9f6
     | confirmation screen. By default, the timeout lasts for three hours.
     |
     */

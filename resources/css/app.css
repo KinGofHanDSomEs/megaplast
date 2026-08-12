@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+<<<<<<< HEAD
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
@@ -6,4 +7,20 @@
 @theme {
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
+=======
+@import 'fonts.css';
+@import 'media.css';
+
+@theme {
+    --font-heading: 'Montserrat', sans-serif;
+    --font-text: 'Open Sans', sans-serif;
+}
+
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+>>>>>>> 65a6a6386df3e72542fe014458e036af01f8b9f6
 }
